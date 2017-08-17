@@ -4,8 +4,32 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+var content={
+    title:'Article One | Taruni',
+    heading:'Article One',
+    date: 'August 17 2017',
+    content:`<div text align=center > 
+        
+            <p>
+                
+                                                                    This is my second article. This is my second article. This is my second article. This is my second article
+            
+            </p>
+            
+            <p>
+            
+                                                                    This is my second article. This is my second article. This is my second article. This is my second article. 
+          
+            </p>
+            <p>
+                
+                                                                      This is my second article. This is my second article. This is my second article. This is my second article.
+        
+            </p>`
+            };`
+            
 
-app.get('/', function (req, res) {
+  app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
