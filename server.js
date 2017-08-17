@@ -27,24 +27,28 @@ var content={
         
             </p>`
             };`
-            
-var htmltemplate=`<!DOCTYPE html>
-<html>
-    <head text align=center>
-    
-        <title> 
+   function createTemplate(data) {  
+   var titl=data.title
+   var date=data.date
+   var heading=data.heading
+   var content=data.content
+   
+var htmlTemplate= `
+    <html>
+     < head >
+        < title > 
     
             ${title}
     
-        </title>
+        < /title >
     
     
         <meta name="viewport" content="width=device-width, initial-sacle=1" />
         <link href="/ui/style.css" rel="stylesheet" />
         
     
-    </head>
-    <body>
+    </ head >
+    < body >
         <div class="container">
           <div text align=center> 
         <a href="/">Home</a>
@@ -56,15 +60,13 @@ var htmltemplate=`<!DOCTYPE html>
         <div text align=center>
             ${date}
         </div>
-        ${xcontent}
+        ${content}
         </div>
         </div>
     </body>
-</html>
-
-
-`
-
+</html> `;
+return htmlTemplate;
+}
   app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -73,7 +75,7 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 app.get('/article-one',function (req,res) {
- res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+res.send(createTemplate(article-one));
 });
 app.get('/article-two',function (req,res) {
  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
