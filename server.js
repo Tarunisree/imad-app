@@ -28,6 +28,42 @@ var content={
             </p>`
             };`
             
+var htmltemplate=`<!DOCTYPE html>
+<html>
+    <head text align=center>
+    
+        <title> 
+    
+            ${title}
+    
+        </title>
+    
+    
+        <meta name="viewport" content="width=device-width, initial-sacle=1" />
+        <link href="/ui/style.css" rel="stylesheet" />
+        
+    
+    </head>
+    <body>
+        <div class="container">
+          <div text align=center> 
+        <a href="/">Home</a>
+        </div>
+        <hr/>
+        <h3>
+           ${heading}
+        </h3>
+        <div text align=center>
+            ${date}
+        </div>
+        ${xcontent}
+        </div>
+        </div>
+    </body>
+</html>
+
+
+`
 
   app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
